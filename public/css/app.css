@@ -1,0 +1,1030 @@
+/* ===== NASHE GAMES - ESTILOS PRINCIPALES ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #1a1a1a;
+    font-family: 'Rajdhani', sans-serif;
+    color: #e5e7eb;
+    min-height: 100vh;
+}
+
+/* ===== LAYOUT PRINCIPAL ===== */
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+    width: 180px;
+    background: #0f0f0f;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    height: 100vh;
+}
+
+.sidebar-top {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-item {
+    padding: 14px 25px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #888;
+    font-size: 15px;
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.nav-item:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.nav-item.active {
+    color: #fff;
+    border-left-color: #7c3aed;
+    background: rgba(124, 58, 237, 0.1);
+}
+
+.nav-item i {
+    font-size: 18px;
+}
+
+.sidebar-bottom {
+    padding: 20px 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #888;
+    font-size: 14px;
+}
+
+.user-info i {
+    font-size: 20px;
+}
+
+/* ===== CONTENIDO PRINCIPAL ===== */
+.main-content {
+    flex: 1;
+    margin-left: 180px;
+    padding: 40px;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.page-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+
+.search-bar {
+    background: #2a2a2a;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 25px;
+    color: #ccc;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 14px;
+    width: 280px;
+    outline: none;
+}
+
+.search-bar::placeholder {
+    color: #777;
+}
+
+/* ===== TABS (LIBRARY) ===== */
+.tabs {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 25px;
+    color: #888;
+    font-size: 15px;
+}
+
+.tabs .tab {
+    cursor: pointer;
+}
+
+.tabs .tab.active {
+    color: #fff;
+    font-weight: 600;
+}
+
+.tabs .sep {
+    color: #444;
+}
+
+/* ===== GAME CARDS (LIBRARY) ===== */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.game-card {
+    background: #2a2a2a;
+    border-radius: 12px;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+    line-height: 1;
+}
+
+.game-card:hover {
+    transform: translateY(-4px);
+}
+
+.game-gta {
+    background: linear-gradient(135deg, #f4a261 0%, #e76f51 50%, #2a1b3d 100%);
+}
+
+.game-spiderman {
+    background: linear-gradient(135deg, #1a1a1a 0%, #c0392b 50%, #1a1a1a 100%);
+}
+
+.game-forza {
+    background: linear-gradient(135deg, #e5e5e5 0%, #f5f5f5 50%, #c0c0c0 100%);
+    color: #c0392b;
+}
+
+.game-info {
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.game-info .dots {
+    color: #555;
+    font-size: 18px;
+}
+
+.game-info .play-btn {
+    color: #aaa;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* ===== STORE - FEATURED ===== */
+.featured-game {
+    background: linear-gradient(90deg, #ff6b9d 0%, #c44569 50%, #2a1b3d 100%);
+    border-radius: 16px;
+    padding: 35px;
+    margin-bottom: 25px;
+    position: relative;
+    overflow: hidden;
+    min-height: 200px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.featured-game::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 30% 80%, rgba(255, 107, 157, 0.4) 0%, transparent 50%),
+        linear-gradient(180deg, transparent 30%, rgba(0, 0, 0, 0.3) 100%);
+}
+
+.featured-content {
+    position: relative;
+    color: #fff;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.featured-left .price-tag {
+    font-size: 13px;
+    color: #ffd;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+}
+
+.featured-left .desc {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 400px;
+}
+
+.add-cart-btn {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+}
+
+.add-cart-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* ===== STORE - NEW TRENDS ===== */
+.section-title {
+    color: #ccc;
+    font-size: 16px;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+.store-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 18px;
+}
+
+.store-card {
+    aspect-ratio: 1;
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    color: #fff;
+    text-align: center;
+    padding: 16px;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.store-card:hover {
+    transform: translateY(-4px);
+}
+
+.card-fable {
+    background: linear-gradient(180deg, #2a4d3a 0%, #1a2d24 50%, #0a1810 100%);
+}
+
+.card-wolverine {
+    background: linear-gradient(135deg, #f4d03f 0%, #d4a017 100%);
+    color: #1a1a1a;
+}
+
+.card-subnautica {
+    background: linear-gradient(180deg, #0a4d6e 0%, #062a3d 100%);
+    font-size: 18px;
+}
+
+/* ===== LOGIN ===== */
+.login-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.login-title {
+    font-size: 44px;
+    color: #888;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.logo-area {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.nashe-logo {
+    width: 220px;
+    height: 170px;
+    background: linear-gradient(135deg, #1e3a8a 0%, #581c87 100%);
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.nashe-logo::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(124, 58, 237, 0.6) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.6) 0%, transparent 40%);
+}
+
+.logo-text {
+    position: relative;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    color: #fff;
+    font-size: 30px;
+    letter-spacing: 2px;
+    text-align: center;
+    line-height: 1.1;
+    text-shadow: 0 0 20px rgba(124, 58, 237, 0.8);
+}
+
+.logo-text .games {
+    background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.logo-tag {
+    position: relative;
+    margin-top: 8px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 3px 12px;
+    border-radius: 4px;
+    font-size: 10px;
+    color: #f59e0b;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    color: #aaa;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.form-input {
+    width: 100%;
+    background: #2a2a2a;
+    border: none;
+    border-radius: 25px;
+    padding: 14px 22px;
+    color: #fff;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 15px;
+    outline: none;
+}
+
+.form-input:focus {
+    box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.4);
+}
+
+.signup-link {
+    text-align: center;
+    color: #aaa;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.signup-link a {
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    color: #ec4899;
+}
+
+/* ===== CART ===== */
+.cart-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+.cart-item {
+    background: #2a2a2a;
+    border-radius: 16px;
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.cart-item.selected {
+    background: #333;
+}
+
+.checkbox {
+    width: 22px;
+    height: 22px;
+    border: 1.5px solid #555;
+    border-radius: 4px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.checkbox.checked {
+    background: #fff;
+    border-color: #fff;
+}
+
+.checkbox.checked::after {
+    content: '✓';
+    color: #000;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.cart-img {
+    width: 160px;
+    height: 80px;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    line-height: 1;
+}
+
+.cart-cod {
+    background: linear-gradient(135deg, #1a3a5c 0%, #0a1a2a 100%);
+}
+
+.cart-silksong {
+    background: linear-gradient(135deg, #c0392b 0%, #6e1a14 100%);
+    font-size: 15px;
+}
+
+.cart-katana {
+    background: linear-gradient(135deg, #ec4899 0%, #1e3a8a 100%);
+    font-size: 15px;
+}
+
+.cart-name {
+    flex: 1;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.cart-price {
+    color: #888;
+    font-size: 14px;
+    margin-right: 15px;
+}
+
+.pay-now-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.pay-btn {
+    background: rgba(180, 180, 180, 0.85);
+    color: #1a1a1a;
+    border: none;
+    padding: 14px 50px;
+    border-radius: 28px;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: background 0.2s;
+}
+
+.pay-btn:hover {
+    background: rgba(220, 220, 220, 0.95);
+}
+
+/* ===== AGREGAR ESTO AL FINAL DE TU app.css ===== */
+
+/* Hacer que los items del cart se vean clickeables */
+.cart-item {
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.cart-item:hover {
+    background: #333;
+}
+
+/* Total junto al botón Pay Now */
+.pay-now-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.total-display {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.total-display span {
+    color: #7c3aed;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    margin-left: 8px;
+}
+
+/* ===== AGREGAR ESTO AL FINAL DE TU app.css ===== */
+
+/* Logo real de Nashe Games en el Login */
+.nashe-logo-img {
+    width: 240px;
+    height: auto;
+    border-radius: 14px;
+    filter: drop-shadow(0 0 30px rgba(124, 58, 237, 0.5));
+    transition: transform 0.3s ease;
+}
+
+.nashe-logo-img:hover {
+    transform: scale(1.03);
+    filter: drop-shadow(0 0 40px rgba(124, 58, 237, 0.7));
+}
+
+/* Hacer que "Guest" sea clickeable y se vea bien */
+a.user-info {
+    text-decoration: none;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+a.user-info:hover {
+    color: #fff;
+}
+/* ============================================
+   ===== NUEVOS ESTILOS - DATOS DINÁMICOS =====
+   ============================================ */
+
+/* ===== Flash message global ===== */
+.flash-message {
+    background: rgba(124, 58, 237, 0.18);
+    border: 1px solid rgba(124, 58, 237, 0.45);
+    color: #e9d5ff;
+    padding: 14px 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: slideDown 0.35s ease;
+}
+
+.flash-message i {
+    color: #a78bfa;
+    font-size: 18px;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Errores de autenticación ===== */
+.auth-error {
+    background: rgba(220, 38, 38, 0.15);
+    border: 1px solid rgba(220, 38, 38, 0.5);
+    color: #fecaca;
+    padding: 14px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.auth-error i {
+    color: #ef4444;
+    font-size: 18px;
+}
+
+.auth-error-list {
+    margin: 0;
+    padding-left: 20px;
+}
+
+/* ===== Botón submit en formularios de auth ===== */
+.auth-submit-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%);
+    color: #fff;
+    border: none;
+    padding: 14px 22px;
+    border-radius: 25px;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35);
+}
+
+.auth-submit-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 22px rgba(124, 58, 237, 0.55);
+}
+
+/* ===== Sidebar: logout + cart badge ===== */
+.logout-form {
+    margin-top: 12px;
+}
+
+.logout-btn {
+    background: none;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.logout-btn:hover {
+    color: #ec4899;
+}
+
+.logout-btn i {
+    font-size: 18px;
+}
+
+.cart-badge {
+    background: #ec4899;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 10px;
+    margin-left: auto;
+    min-width: 20px;
+    text-align: center;
+}
+
+/* ===== Search form (no fuerza ancho del search-bar) ===== */
+.search-form {
+    margin: 0;
+}
+
+/* ===== Store - featured con imagen real de fondo ===== */
+.featured-game {
+    background-size: cover !important;
+    background-position: center !important;
+    min-height: 240px;
+}
+
+.featured-game::before {
+    display: none;
+}
+
+.featured-title {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 28px;
+    color: #fff;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85);
+    letter-spacing: 1px;
+}
+
+.price-tag strong {
+    font-size: 16px;
+    color: #fff;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #888;
+    font-size: 13px;
+    margin-right: 6px;
+}
+
+/* ===== Store cards con imagen real ===== */
+.store-card {
+    background-size: cover !important;
+    background-position: center !important;
+    position: relative;
+    padding: 0;
+    aspect-ratio: 3 / 4;
+    font-size: 0;
+    align-items: flex-end;
+}
+
+.store-card-overlay {
+    width: 100%;
+    padding: 12px 14px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.store-card-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.2;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.85);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.store-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.store-card-price {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.store-card-price .current-price {
+    color: #a78bfa;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.card-add-btn {
+    background: rgba(124, 58, 237, 0.85);
+    color: #fff;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.card-add-btn:hover {
+    background: #ec4899;
+    transform: scale(1.08);
+}
+
+.card-add-btn i {
+    font-size: 14px;
+}
+
+/* ===== Library: game cards con imagen real ===== */
+.game-card {
+    background-size: cover !important;
+    background-position: center !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.game-card-label {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    right: 14px;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
+    line-height: 1.2;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.purchase-date {
+    color: #666;
+    font-size: 12px;
+}
+
+/* ===== Cart: imagen real ===== */
+.cart-img {
+    background-size: cover !important;
+    background-position: center !important;
+    background-color: #2a2a2a;
+}
+
+.cart-item {
+    position: relative;
+}
+
+.cart-checkbox {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.cart-remove-btn {
+    background: rgba(220, 38, 38, 0.15);
+    border: none;
+    color: #ef4444;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.cart-remove-btn:hover {
+    background: rgba(220, 38, 38, 0.4);
+    color: #fff;
+}
+
+/* ===== Estado vacío (library, cart sin items) ===== */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #666;
+}
+
+.empty-state i {
+    font-size: 56px;
+    color: #444;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.empty-state p {
+    font-size: 16px;
+    color: #888;
+}
+
+.empty-state a {
+    color: #a78bfa;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.empty-state a:hover {
+    color: #ec4899;
+}
+
+.empty-message {
+    color: #888;
+    padding: 30px 0;
+    text-align: center;
+}
+
+/* ===== Detalle de juego ===== */
+.back-link {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s ease;
+}
+
+.back-link:hover { color: #fff; }
+
+.game-detail-hero {
+    background-size: cover !important;
+    background-position: center !important;
+    border-radius: 16px;
+    min-height: 280px;
+    display: flex;
+    align-items: flex-end;
+    padding: 30px;
+    margin-bottom: 25px;
+}
+
+.game-detail-title {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    color: #fff;
+    font-size: 36px;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.95);
+}
+
+.game-detail-price-box {
+    background: #2a2a2a;
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 25px;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.price-row:last-child { border-bottom: none; }
+
+.price-label {
+    color: #aaa;
+    font-size: 14px;
+}
+
+.current-price.big {
+    color: #a78bfa;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.historic-price {
+    color: #10b981;
+    font-weight: 600;
+}
+
+.cheaper-stores {
+    margin-top: 25px;
+}
+
+.store-list {
+    list-style: none;
+    padding: 0;
+}
+
+.store-list li {
+    background: #2a2a2a;
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    color: #ccc;
+    font-size: 14px;
+}
+
+.mt-3 { margin-top: 18px; }

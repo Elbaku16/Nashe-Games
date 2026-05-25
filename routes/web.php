@@ -25,10 +25,11 @@ Route::middleware('auth')->group(function () {
 
     // Store
     Route::get('/store', [StoreController::class, 'index'])->name('store');
-    Route::get('/store/game/{dealID}', [StoreController::class, 'show'])->name('store.game');
+    Route::get('/store/game/{dealID}', [StoreController::class, 'show'])->where('dealID', '.*')->name('store.game');
 
     // Library
     Route::get('/library', [LibraryController::class, 'index'])->name('library');
+    Route::delete('/library/{libraryItem}', [LibraryController::class, 'uninstall'])->name('library.uninstall');
 
     // Cart
     Route::get('/cart', [CartController::class, 'index'])->name('cart');

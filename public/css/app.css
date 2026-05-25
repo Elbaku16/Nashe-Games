@@ -778,6 +778,27 @@ a.user-info:hover {
     align-items: flex-end;
 }
 
+.featured-game { position: relative; }
+
+.card-link-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border-radius: inherit;
+    text-decoration: none;
+}
+
+.store-card > .store-card-overlay,
+.featured-game > .featured-content {
+    position: relative;
+    z-index: 2;
+}
+
+.card-action-form {
+    position: relative;
+    z-index: 3;
+}
+
 .store-card-overlay {
     width: 100%;
     padding: 12px 14px 14px;
@@ -848,6 +869,9 @@ a.user-info:hover {
     background-position: center !important;
     position: relative;
     overflow: hidden;
+    aspect-ratio: 3 / 4;
+    padding: 0;
+    font-size: 0;
 }
 
 .game-card-label {
@@ -870,6 +894,73 @@ a.user-info:hover {
     color: #666;
     font-size: 12px;
 }
+
+.library-menu {
+    position: relative;
+}
+
+.dots-btn {
+    background: transparent;
+    border: none;
+    color: #888;
+    font-size: 18px;
+    line-height: 1;
+    padding: 2px 8px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background .15s, color .15s;
+}
+
+.dots-btn:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: #fff;
+}
+
+.library-menu-popup {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 6px);
+    min-width: 160px;
+    background: #1f1f1f;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 6px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
+    opacity: 0;
+    transform: translateY(4px);
+    pointer-events: none;
+    transition: opacity .15s, transform .15s;
+    z-index: 50;
+}
+
+.library-menu-popup.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.library-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: #ddd;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: left;
+    transition: background .15s, color .15s;
+}
+
+.library-menu-item:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.library-menu-item.danger { color: #f87171; }
+.library-menu-item.danger:hover { background: rgba(248, 113, 113, 0.12); color: #fca5a5; }
 
 /* ===== Cart: imagen real ===== */
 .cart-img {
@@ -981,6 +1072,93 @@ a.user-info:hover {
     border-radius: 14px;
     padding: 24px;
     margin-bottom: 25px;
+}
+
+.game-detail-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-bottom: 25px;
+}
+
+.game-detail-intro {
+    background: #2a2a2a;
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin-bottom: 25px;
+}
+
+.genre-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.genre-chip {
+    background: rgba(124, 58, 237, 0.18);
+    color: #c4b5fd;
+    border: 1px solid rgba(124, 58, 237, 0.35);
+    border-radius: 999px;
+    padding: 4px 12px;
+    font-size: .8rem;
+    font-weight: 500;
+    letter-spacing: .02em;
+}
+
+.game-detail-description {
+    color: #ddd;
+    font-size: 1rem;
+    line-height: 1.55;
+    margin: 0 0 12px;
+}
+
+.game-detail-developer {
+    color: #888;
+    font-size: .85rem;
+    margin: 0;
+}
+
+.game-detail-developer strong { color: #ccc; font-weight: 600; }
+
+.rating-card {
+    background: #2a2a2a;
+    border-radius: 14px;
+    padding: 18px;
+}
+
+.rating-card.rating-positive .rating-score { color: #4ade80; }
+.rating-card.rating-mixed    .rating-score { color: #fbbf24; }
+.rating-card.rating-negative .rating-score { color: #f87171; }
+
+.rating-label {
+    text-transform: uppercase;
+    font-size: .75rem;
+    letter-spacing: .08em;
+    color: #aaa;
+}
+
+.rating-score {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 4px 0;
+    color: #fff;
+}
+
+.rating-text {
+    color: #ddd;
+    font-size: .9rem;
+    display: block;
+}
+
+a.rating-text { color: #a78bfa; text-decoration: none; }
+a.rating-text:hover { text-decoration: underline; }
+
+.rating-count {
+    color: #888;
+    font-size: .8rem;
+    margin-top: 2px;
 }
 
 .price-row {

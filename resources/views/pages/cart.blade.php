@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
-@section('title', 'Cart')
+@section('title', 'Carrito')
 
 @section('content')
 <div class="top-bar">
-    <h1 class="page-title">My cart</h1>
+    <h1 class="page-title">Mi carrito</h1>
 </div>
 
 @if ($items->isEmpty())
@@ -52,7 +52,7 @@
             <div class="total-display">
                 Total: <span id="total-amount">${{ number_format($total, 2) }}</span>
             </div>
-            <button type="submit" class="pay-btn">Pay Now</button>
+            <button type="submit" class="pay-btn">Pagar ahora</button>
         </div>
     </form>
 

@@ -1,24 +1,24 @@
 @extends('layouts.app')
 
-@section('title', 'Store')
+@section('title', 'Tienda')
 
 @section('content')
 <div class="top-bar">
-    <h1 class="page-title">Store</h1>
+    <h1 class="page-title">Tienda</h1>
     <form action="{{ route('store') }}" method="GET" class="search-form">
-        <input type="text" name="search" class="search-bar" placeholder="Search games..." value="{{ $search }}">
+        <input type="text" name="search" class="search-bar" placeholder="Buscar juegos..." value="{{ $search }}">
     </form>
 </div>
 
 @if ($featured)
     <div class="featured-game"
-         onclick="window.location='{{ route('store.game', $featured['dealID']) }}'"
-         style="background-image: linear-gradient(135deg, rgba(15,15,15,0.9) 0%, rgba(124,58,237,0.55) 60%, rgba(236,72,153,0.4) 100%), url('{{ $featured['thumb'] }}');">
+         style="background-image: linear-gradient(135deg, rgba(15,15,15,0.9) 0%, rgba(124,58,237,0.55) 60%, rgba(236,72,153,0.4) 100%), url('{{ $featured['bannerImage'] }}');">
+        <a class="card-link-overlay" href="{{ route('store.game', $featured['dealID']) }}" aria-label="{{ $featured['title'] }}"></a>
         <div class="featured-content">
             <div class="featured-left">
                 <div class="featured-title">{{ $featured['title'] }}</div>
                 <div class="price-tag">
-                    AVAILABLE NOW &nbsp;
+                    DISPONIBLE AHORA &nbsp;
                     @if ($featured['salePrice'] !== $featured['normalPrice'])
                         <span class="old-price">${{ $featured['normalPrice'] }}</span>
                     @endif
@@ -32,19 +32,12 @@
                     @endif
                 </div>
             </div>
-            <form action="{{ route('cart.add') }}" method="POST" onclick="event.stopPropagation()">
-                @csrf
-                <input type="hidden" name="deal_id" value="{{ $featured['dealID'] }}">
-                <button type="submit" class="add-cart-btn">
-                    Add to cart <i class="bi bi-arrow-right"></i>
-                </button>
-            </form>
         </div>
     </div>
 @endif
 
 <h3 class="section-title">
-    {{ $search !== '' ? 'Resultados para: '.$search : 'New tendencies' }}
+    {{ $search !== '' ? 'Resultados para: '.$search : 'Nuevas tendencias' }}
 </h3>
 
 @if (empty($deals))
@@ -59,8 +52,8 @@
     <div class="store-grid">
         @foreach ($deals as $deal)
             <div class="store-card"
-                 onclick="window.location='{{ route('store.game', $deal['dealID']) }}'"
-                 style="background-image: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.92) 100%), url('{{ $deal['thumb'] }}');">
+                 style="background-image: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.92) 100%), url('{{ $deal['cardImage'] }}');">
+                <a class="card-link-overlay" href="{{ route('store.game', $deal['dealID']) }}" aria-label="{{ $deal['title'] }}"></a>
                 <div class="store-card-overlay">
                     <div class="store-card-title">{{ $deal['title'] }}</div>
                     <div class="store-card-footer">
@@ -70,13 +63,6 @@
                             @endif
                             <span class="current-price">${{ $deal['salePrice'] }}</span>
                         </div>
-                        <form action="{{ route('cart.add') }}" method="POST" onclick="event.stopPropagation()">
-                            @csrf
-                            <input type="hidden" name="deal_id" value="{{ $deal['dealID'] }}">
-                            <button type="submit" class="card-add-btn" title="Agregar al carrito">
-                                <i class="bi bi-cart-plus"></i>
-                            </button>
-                        </form>
                     </div>
                 </div>
             </div>

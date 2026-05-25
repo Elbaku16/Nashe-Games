@@ -27,15 +27,15 @@
                 @auth
                     <a href="{{ route('store') }}" class="nav-item {{ request()->routeIs('store*') ? 'active' : '' }}">
                         <i class="bi bi-tag-fill"></i>
-                        <span>Store</span>
+                        <span>Tienda</span>
                     </a>
                     <a href="{{ route('library') }}" class="nav-item {{ request()->routeIs('library') ? 'active' : '' }}">
                         <i class="bi bi-collection-fill"></i>
-                        <span>Library</span>
+                        <span>Biblioteca</span>
                     </a>
                     <a href="{{ route('cart') }}" class="nav-item {{ request()->routeIs('cart*') ? 'active' : '' }}">
                         <i class="bi bi-cart-fill"></i>
-                        <span>Cart</span>
+                        <span>Carrito</span>
                         @if (($cartCount = auth()->user()->cartItems()->count()) > 0)
                             <span class="cart-badge">{{ $cartCount }}</span>
                         @endif
@@ -53,13 +53,13 @@
                         @csrf
                         <button type="submit" class="logout-btn">
                             <i class="bi bi-box-arrow-right"></i>
-                            <span>Logout</span>
+                            <span>Cerrar sesión</span>
                         </button>
                     </form>
                 @else
                     <a href="{{ route('login') }}" class="user-info {{ request()->routeIs('login') ? 'active' : '' }}">
                         <i class="bi bi-person-circle"></i>
-                        <span>Guest</span>
+                        <span>Invitado</span>
                     </a>
                 @endauth
             </div>

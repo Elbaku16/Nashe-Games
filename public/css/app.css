@@ -56,8 +56,8 @@ body {
 
 .nav-item.active {
     color: #fff;
-    border-left-color: #7c3aed;
-    background: rgba(124, 58, 237, 0.1);
+    border-left-color: #1e3a8a;
+    background: rgba(30, 58, 138, 0.1);
 }
 
 .nav-item i {
@@ -344,7 +344,7 @@ body {
 .nashe-logo {
     width: 220px;
     height: 170px;
-    background: linear-gradient(135deg, #1e3a8a 0%, #581c87 100%);
+    background: linear-gradient(135deg, #1e3a8a 0%, #0c1e4a 100%);
     border-radius: 14px;
     display: flex;
     flex-direction: column;
@@ -359,7 +359,7 @@ body {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(circle at 20% 30%, rgba(124, 58, 237, 0.6) 0%, transparent 40%),
+        radial-gradient(circle at 20% 30%, rgba(30, 58, 138, 0.6) 0%, transparent 40%),
         radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.6) 0%, transparent 40%);
 }
 
@@ -372,11 +372,11 @@ body {
     letter-spacing: 2px;
     text-align: center;
     line-height: 1.1;
-    text-shadow: 0 0 20px rgba(124, 58, 237, 0.8);
+    text-shadow: 0 0 20px rgba(30, 58, 138, 0.8);
 }
 
 .logo-text .games {
-    background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+    background: linear-gradient(135deg, #ec4899 0%, #1e3a8a 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -418,7 +418,7 @@ body {
 }
 
 .form-input:focus {
-    box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.4);
+    box-shadow: 0 0 0 2px rgba(30, 58, 138, 0.4);
 }
 
 .signup-link {
@@ -579,7 +579,7 @@ body {
 }
 
 .total-display span {
-    color: #7c3aed;
+    color: #1e3a8a;
     font-family: 'Orbitron', sans-serif;
     font-weight: 700;
     margin-left: 8px;
@@ -592,13 +592,13 @@ body {
     width: 240px;
     height: auto;
     border-radius: 14px;
-    filter: drop-shadow(0 0 30px rgba(124, 58, 237, 0.5));
+    filter: drop-shadow(0 0 30px rgba(30, 58, 138, 0.5));
     transition: transform 0.3s ease;
 }
 
 .nashe-logo-img:hover {
     transform: scale(1.03);
-    filter: drop-shadow(0 0 40px rgba(124, 58, 237, 0.7));
+    filter: drop-shadow(0 0 40px rgba(30, 58, 138, 0.7));
 }
 
 /* Hacer que "Guest" sea clickeable y se vea bien */
@@ -618,9 +618,9 @@ a.user-info:hover {
 
 /* ===== Flash message global ===== */
 .flash-message {
-    background: rgba(124, 58, 237, 0.18);
-    border: 1px solid rgba(124, 58, 237, 0.45);
-    color: #e9d5ff;
+    background: rgba(30, 58, 138, 0.18);
+    border: 1px solid rgba(30, 58, 138, 0.45);
+    color: #dbeafe;
     padding: 14px 20px;
     border-radius: 10px;
     margin-bottom: 25px;
@@ -632,7 +632,7 @@ a.user-info:hover {
 }
 
 .flash-message i {
-    color: #a78bfa;
+    color: #60a5fa;
     font-size: 18px;
 }
 
@@ -668,7 +668,7 @@ a.user-info:hover {
 /* ===== Botón submit en formularios de auth ===== */
 .auth-submit-btn {
     width: 100%;
-    background: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%);
+    background: linear-gradient(135deg, #1e3a8a 0%, #ec4899 100%);
     color: #fff;
     border: none;
     padding: 14px 22px;
@@ -682,12 +682,12 @@ a.user-info:hover {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35);
+    box-shadow: 0 4px 14px rgba(30, 58, 138, 0.35);
 }
 
 .auth-submit-btn:hover {
     transform: translateY(-1px);
-    box-shadow: 0 6px 22px rgba(124, 58, 237, 0.55);
+    box-shadow: 0 6px 22px rgba(30, 58, 138, 0.55);
 }
 
 /* ===== Sidebar: logout + cart badge ===== */
@@ -834,13 +834,13 @@ a.user-info:hover {
 }
 
 .store-card-price .current-price {
-    color: #a78bfa;
+    color: #60a5fa;
     font-weight: 700;
     font-size: 15px;
 }
 
 .card-add-btn {
-    background: rgba(124, 58, 237, 0.85);
+    background: rgba(30, 58, 138, 0.85);
     color: #fff;
     border: none;
     width: 32px;
@@ -1019,7 +1019,7 @@ a.user-info:hover {
 }
 
 .empty-state a {
-    color: #a78bfa;
+    color: #60a5fa;
     font-weight: 600;
     text-decoration: none;
 }
@@ -1096,9 +1096,9 @@ a.user-info:hover {
 }
 
 .genre-chip {
-    background: rgba(124, 58, 237, 0.18);
+    background: rgba(30, 58, 138, 0.18);
     color: #c4b5fd;
-    border: 1px solid rgba(124, 58, 237, 0.35);
+    border: 1px solid rgba(30, 58, 138, 0.35);
     border-radius: 999px;
     padding: 4px 12px;
     font-size: .8rem;
@@ -1152,7 +1152,7 @@ a.user-info:hover {
     display: block;
 }
 
-a.rating-text { color: #a78bfa; text-decoration: none; }
+a.rating-text { color: #60a5fa; text-decoration: none; }
 a.rating-text:hover { text-decoration: underline; }
 
 .rating-count {
@@ -1176,7 +1176,7 @@ a.rating-text:hover { text-decoration: underline; }
 }
 
 .current-price.big {
-    color: #a78bfa;
+    color: #60a5fa;
     font-family: 'Orbitron', sans-serif;
     font-weight: 700;
     font-size: 22px;
@@ -1206,3 +1206,126 @@ a.rating-text:hover { text-decoration: underline; }
 }
 
 .mt-3 { margin-top: 18px; }
+
+/* ===== TRAILER DEL JUEGO ===== */
+.game-trailer-wrapper {
+    margin: 24px 0 8px;
+    background: #000;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+}
+
+.game-trailer {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 540px;
+    background: #000;
+}
+
+[data-theme="light"] .game-trailer-wrapper {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== MODO CLARO ===== */
+[data-theme="light"] body {
+    background: #f3f4f6;
+    color: #1f2937;
+}
+
+[data-theme="light"] .sidebar {
+    background: #ffffff;
+    border-right: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .sidebar-bottom {
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .nav-item,
+[data-theme="light"] .user-info,
+[data-theme="light"] .tabs,
+[data-theme="light"] .search-bar::placeholder {
+    color: #555;
+}
+
+[data-theme="light"] .nav-item:hover {
+    color: #111;
+    background: rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .nav-item.active {
+    color: #111;
+    background: rgba(30, 58, 138, 0.12);
+}
+
+[data-theme="light"] .page-title,
+[data-theme="light"] .tabs .tab.active,
+[data-theme="light"] .section-title {
+    color: #111827;
+}
+
+[data-theme="light"] .search-bar {
+    background: #ffffff;
+    color: #1f2937;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .game-card,
+[data-theme="light"] .store-card,
+[data-theme="light"] .game-detail-price-box,
+[data-theme="light"] .game-detail-intro,
+[data-theme="light"] .game-detail-meta .rating-card,
+[data-theme="light"] .store-list li {
+    background: #ffffff;
+    color: #1f2937;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .empty-message,
+[data-theme="light"] .rating-text,
+[data-theme="light"] .price-label {
+    color: #4b5563;
+}
+
+[data-theme="light"] .flash-message {
+    background: #ecfdf5;
+    color: #065f46;
+    border: 1px solid #a7f3d0;
+}
+
+[data-theme="light"] .theme-toggle {
+    color: #555;
+}
+
+[data-theme="light"] .theme-toggle:hover {
+    color: #111;
+    background: rgba(0, 0, 0, 0.04);
+}
+
+/* Botón de cambio de tema en el sidebar */
+.theme-toggle {
+    background: none;
+    border: none;
+    color: #888;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 0;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: color 0.2s ease, background 0.2s ease;
+    border-radius: 6px;
+}
+
+.theme-toggle:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.theme-toggle i {
+    font-size: 18px;
+}

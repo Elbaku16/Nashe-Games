@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <script>
+        // Aplica el tema antes de renderizar para evitar parpadeo.
+        (function () {
+            try {
+                const saved = localStorage.getItem('nashe-theme');
+                if (saved === 'light') {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                }
+            } catch (e) {}
+        })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -24,11 +35,11 @@
         {{-- SIDEBAR --}}
         <aside class="sidebar">
             <div class="sidebar-top">
+                <a href="{{ route('store') }}" class="nav-item {{ request()->routeIs('store*') ? 'active' : '' }}">
+                    <i class="bi bi-tag-fill"></i>
+                    <span>Tienda</span>
+                </a>
                 @auth
-                    <a href="{{ route('store') }}" class="nav-item {{ request()->routeIs('store*') ? 'active' : '' }}">
-                        <i class="bi bi-tag-fill"></i>
-                        <span>Tienda</span>
-                    </a>
                     <a href="{{ route('library') }}" class="nav-item {{ request()->routeIs('library') ? 'active' : '' }}">
                         <i class="bi bi-collection-fill"></i>
                         <span>Biblioteca</span>
@@ -44,6 +55,10 @@
             </div>
 
             <div class="sidebar-bottom">
+                <button type="button" id="themeToggle" class="theme-toggle" aria-label="Cambiar tema">
+                    <i class="bi bi-moon-stars-fill" id="themeToggleIcon"></i>
+                    <span id="themeToggleLabel">Modo claro</span>
+                </button>
                 @auth
                     <div class="user-info">
                         <i class="bi bi-person-circle"></i>
@@ -79,5 +94,33 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        (function () {
+            const btn = document.getElementById('themeToggle');
+            const icon = document.getElementById('themeToggleIcon');
+            const label = document.getElementById('themeToggleLabel');
+            if (!btn) return;
+
+            const apply = (theme) => {
+                if (theme === 'light') {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                    icon.className = 'bi bi-sun-fill';
+                    label.textContent = 'Modo oscuro';
+                } else {
+                    document.documentElement.removeAttribute('data-theme');
+                    icon.className = 'bi bi-moon-stars-fill';
+                    label.textContent = 'Modo claro';
+                }
+            };
+
+            apply(localStorage.getItem('nashe-theme') || 'dark');
+
+            btn.addEventListener('click', () => {
+                const next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+                localStorage.setItem('nashe-theme', next);
+                apply(next);
+            });
+        })();
+    </script>
 </body>
 </html>

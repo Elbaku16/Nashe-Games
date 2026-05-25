@@ -20,6 +20,7 @@
     $releaseDate = $releaseTimestamp > 0 ? date('M j, Y', $releaseTimestamp) : null;
     $publisher = $info['publisher'] ?? null;
     $steamAppID = $info['steamAppID'] ?? null;
+    $trailer = $steamDetails['movies'][0] ?? null;
 
     $steamRatingClass = match (true) {
         $steamRatingPercent >= 80 => 'rating-positive',
@@ -47,6 +48,24 @@
          style="background-image: linear-gradient(180deg, rgba(15,15,15,0.4) 0%, rgba(15,15,15,0.95) 100%), url('{{ $heroImage ?? $info['thumb'] ?? '' }}');">
         <h1 class="game-detail-title">{{ $info['name'] }}</h1>
     </div>
+
+    @if ($trailer)
+        <div class="game-trailer-wrapper">
+            <video class="game-trailer"
+                   controls
+                   playsinline
+                   preload="metadata"
+                   poster="{{ $trailer['thumbnail'] ?? '' }}">
+                @if (! empty($trailer['mp4']))
+                    <source src="{{ $trailer['mp4']['max'] ?? $trailer['mp4']['480'] ?? '' }}" type="video/mp4">
+                @endif
+                @if (! empty($trailer['webm']))
+                    <source src="{{ $trailer['webm']['max'] ?? $trailer['webm']['480'] ?? '' }}" type="video/webm">
+                @endif
+                Tu navegador no soporta el reproductor de video.
+            </video>
+        </div>
+    @endif
 
     @if ($shortDescription || ! empty($genres))
         <div class="game-detail-intro">
@@ -123,13 +142,19 @@
                 </div>
             @endif
 
-            <form action="{{ route('cart.add') }}" method="POST" class="mt-3">
-                @csrf
-                <input type="hidden" name="deal_id" value="{{ $dealID }}">
-                <button type="submit" class="auth-submit-btn">
-                    <i class="bi bi-cart-plus"></i> Añadir al carrito
-                </button>
-            </form>
+            @auth
+                <form action="{{ route('cart.add') }}" method="POST" class="mt-3">
+                    @csrf
+                    <input type="hidden" name="deal_id" value="{{ $dealID }}">
+                    <button type="submit" class="auth-submit-btn">
+                        <i class="bi bi-cart-plus"></i> Añadir al carrito
+                    </button>
+                </form>
+            @else
+                <a href="{{ route('login') }}" class="auth-submit-btn mt-3 d-inline-block text-center">
+                    <i class="bi bi-box-arrow-in-right"></i> Inicia sesión para comprar
+                </a>
+            @endauth
         </div>
 
         @if (! empty($deal['cheaperStores']))
